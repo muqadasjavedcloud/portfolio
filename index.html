@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muqadas Javed | QA Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- LOADING SCREEN -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">MJ</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-text fira">Initializing QA Mode...</p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>MJ<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"           class="nav-link active">Home</a></li>
+        <li><a href="#about"          class="nav-link">About</a></li>
+        <li><a href="#skills"         class="nav-link">Skills</a></li>
+        <li><a href="#experience"     class="nav-link">Experience</a></li>
+        <li><a href="#projects"       class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact"        class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+      <h1 class="hero-title">
+        <span class="title-greeting">Hi, I'm</span>
+        <span class="title-name" id="typedName"></span>
+      </h1>
+      <div class="hero-role">
+        <span class="role-static">I'm a </span>
+        <span class="role-dynamic" id="roleText"></span><span class="role-cursor">|</span>
+      </div>
+      <p class="hero-desc">
+        3+ years crafting quality across Web, Mobile, FinTech &amp; AI-powered applications.<br/>
+        Breaking things professionally — so users don't have to.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Exp.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-label">Companies</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact"  class="btn btn-primary"><i class="fas fa-paper-plane"></i> Hire Me</a>
+        <a href="#projects" class="btn btn-outline"><i class="fas fa-folder-open"></i> View Work</a>
+        <a href="https://github.com/muqadasjavedcloud" target="_blank" class="btn btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-title fira">test_runner.sh</span>
+        </div>
+        <div class="terminal-body fira">
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">npm run cypress:open</span></div>
+          <div class="t-line t-out">&#9658; Running test suites...</div>
+          <div class="t-line t-pass">&#10003; Login flow &mdash; <span>PASSED</span></div>
+          <div class="t-line t-pass">&#10003; Payment workflow &mdash; <span>PASSED</span></div>
+          <div class="t-line t-pass">&#10003; API response validation &mdash; <span>PASSED</span></div>
+          <div class="t-line t-fail">&#10007; Edge case #42 &mdash; <span>BUG FOUND</span></div>
+          <div class="t-line t-out">&#128203; Bug report filed to Jira...</div>
+          <div class="t-line t-success">&#127919; Quality Assured. Ship it!</div>
+          <div class="t-blink-cursor">&#9608;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Get to know me</span>
+        <h2 class="section-title">About <span class="highlight">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-wrap" data-aos data-aos-delay="100">
+          <div class="about-avatar">
+            <div class="avatar-ring"></div>
+            <div class="avatar-ring ring2"></div>
+            <div class="avatar-inner">MJ</div>
+            <div class="avatar-badge"><i class="fas fa-bug"></i> Bug Hunter</div>
+          </div>
+          <div class="about-links">
+            <a href="https://linkedin.com/in/muqadasjaved" target="_blank" class="social-chip">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/muqadasjavedcloud" target="_blank" class="social-chip">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:muqadasjaved101@gmail.com" class="social-chip">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+        <div class="about-text" data-aos data-aos-delay="200">
+          <p class="about-intro">
+            I'm <strong>Muqadas Javed</strong>, a passionate QA Engineer with <strong>3+ years</strong> of hands-on experience ensuring software quality across web, mobile, fintech, and AI-powered applications.
+          </p>
+          <p>
+            Currently working at <strong>Datics AI</strong>, I lead QA activities for security platforms and AI chatbot products — from test planning all the way to release validation.
+          </p>
+          <p>
+            I believe quality is not just about finding bugs — it's about building confidence in every release. I combine sharp analytical thinking with automation tools like <strong>Playwright</strong> and <strong>Cypress</strong> to deliver robust, reliable software.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div><span>Location</span><strong>Pakistan</strong></div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-graduation-cap"></i>
+              <div><span>Degree</span><strong>BS Software Engineering</strong></div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-university"></i>
+              <div><span>University</span><strong>PUCIT</strong></div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-star"></i>
+              <div><span>CGPA</span><strong>3.24 / 4.0</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">What I work with</span>
+        <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card" data-aos data-aos-delay="0">
+          <div class="skill-icon"><i class="fas fa-robot"></i></div>
+          <h3>Test Automation</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Playwright</span>
+            <span class="skill-tag">Cypress</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="88"></div></div>
+          <span class="skill-percent">88%</span>
+        </div>
+        <div class="skill-card" data-aos data-aos-delay="100">
+          <div class="skill-icon"><i class="fas fa-hand-paper"></i></div>
+          <h3>Manual Testing</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Functional</span>
+            <span class="skill-tag">Regression</span>
+            <span class="skill-tag">Exploratory</span>
+            <span class="skill-tag">Smoke</span>
+            <span class="skill-tag">Sanity</span>
+            <span class="skill-tag">E2E</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="95"></div></div>
+          <span class="skill-percent">95%</span>
+        </div>
+        <div class="skill-card" data-aos data-aos-delay="200">
+          <div class="skill-icon"><i class="fas fa-plug"></i></div>
+          <h3>API Testing</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Response Validation</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
+          <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill-card" data-aos data-aos-delay="300">
+          <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Mobile Testing</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Android</span>
+            <span class="skill-tag">iOS</span>
+            <span class="skill-tag">Cross-Platform</span>
+            <span class="skill-tag">Usability</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-card" data-aos data-aos-delay="400">
+          <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+          <h3>DevOps &amp; Tools</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">Jira</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div>
+          <span class="skill-percent">80%</span>
+        </div>
+        <div class="skill-card" data-aos data-aos-delay="500">
+          <div class="skill-icon"><i class="fas fa-brain"></i></div>
+          <h3>AI Chatbot Testing</h3>
+          <div class="skill-items">
+            <span class="skill-tag">Prompt Testing</span>
+            <span class="skill-tag">Response Accuracy</span>
+            <span class="skill-tag">Data Mapping</span>
+          </div>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="82"></div></div>
+          <span class="skill-percent">82%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">My journey</span>
+        <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item" data-aos>
+          <div class="timeline-dot"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div>
+                <h3 class="tc-role">QA Engineer</h3>
+                <span class="tc-company">Datics AI</span>
+              </div>
+              <div class="tc-meta">
+                <span class="tc-date"><i class="far fa-calendar"></i> Aug 2025 – Present</span>
+                <span class="tc-badge">Current</span>
+              </div>
+            </div>
+            <div class="tc-projects"><i class="fas fa-folder"></i> ThreatMap &middot; FWP &middot; MarketVerse &middot; Cosmic App</div>
+            <ul class="tc-list">
+              <li>Led end-to-end QA for web and AI-powered applications including test planning, design, execution &amp; release validation</li>
+              <li>Performed Functional, Regression, Exploratory, E2E &amp; Beta Testing across multiple products</li>
+              <li>Developed and maintained <strong>Playwright</strong> automation scripts for critical business workflows</li>
+              <li>Validated security workflows, user roles, permissions, and data access controls</li>
+              <li>Tested AI chatbot platforms for response accuracy, prompt handling &amp; conversational quality</li>
+              <li>Collaborated cross-functionally to identify, track &amp; resolve defects throughout the SDLC</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos data-aos-delay="100">
+          <div class="timeline-dot"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div>
+                <h3 class="tc-role">Associate Software QA Engineer</h3>
+                <span class="tc-company">Zapta Technologies</span>
+              </div>
+              <div class="tc-meta">
+                <span class="tc-date"><i class="far fa-calendar"></i> Jun 2024 – Aug 2025</span>
+              </div>
+            </div>
+            <div class="tc-projects"><i class="fas fa-folder"></i> VolarTech (FinTech) &middot; OnComply &middot; OpenTime &middot; ThreatMap</div>
+            <ul class="tc-list">
+              <li>Executed Manual Testing across fintech &amp; service-based apps: Functional, Regression, Smoke, Sanity, UI &amp; Exploratory</li>
+              <li>Designed &amp; executed test cases validating complex business workflows &amp; system requirements</li>
+              <li>Performed API Testing with <strong>Postman</strong> — data integrity, response validation &amp; system integrations</li>
+              <li>Developed &amp; maintained <strong>Cypress</strong> automation suites to improve coverage &amp; efficiency</li>
+              <li>Validated responsive behavior across multiple browsers, devices &amp; screen resolutions</li>
+              <li>Participated in Agile ceremonies, defect management &amp; release testing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos data-aos-delay="200">
+          <div class="timeline-dot"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div>
+                <h3 class="tc-role">Associate QA Engineer</h3>
+                <span class="tc-company">eString Technologies (Pvt) Ltd</span>
+              </div>
+              <div class="tc-meta">
+                <span class="tc-date"><i class="far fa-calendar"></i> Apr 2023 – Apr 2024</span>
+              </div>
+            </div>
+            <div class="tc-projects"><i class="fas fa-folder"></i> Manzil Mobile App &middot; Rental Guru</div>
+            <ul class="tc-list">
+              <li>Performed E2E testing of Android &amp; iOS property management apps</li>
+              <li>Executed Functional, Regression, UI, Usability &amp; Cross-Platform Testing across multiple devices &amp; OS</li>
+              <li>Validated app performance, UX, data accuracy &amp; compatibility for property workflows</li>
+              <li>Reported, tracked &amp; verified defects using defect management tools</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">What I've tested</span>
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card" data-aos data-aos-delay="0">
+          <div class="pc-top fintech"><i class="fas fa-chart-line pc-icon"></i><span class="pc-type">FinTech</span></div>
+          <h3>VolarTech</h3>
+          <p>FinTech platform tested for complex financial workflows, data integrity, and compliance requirements across multiple user roles.</p>
+          <div class="pc-tags"><span>Manual Testing</span><span>API Testing</span><span>Cypress</span><span>Regression</span></div>
+          <div class="pc-company">@ Zapta Technologies</div>
+        </div>
+
+        <div class="project-card" data-aos data-aos-delay="100">
+          <div class="pc-top security"><i class="fas fa-shield-alt pc-icon"></i><span class="pc-type">Security</span></div>
+          <h3>ThreatMap</h3>
+          <p>Security platform with rigorous validation of user roles, permissions, data access controls, and threat visualization workflows.</p>
+          <div class="pc-tags"><span>Security Testing</span><span>Playwright</span><span>E2E</span><span>Role Testing</span></div>
+          <div class="pc-company">@ Datics AI / Zapta Technologies</div>
+        </div>
+
+        <div class="project-card" data-aos data-aos-delay="200">
+          <div class="pc-top ai"><i class="fas fa-robot pc-icon"></i><span class="pc-type">AI Platform</span></div>
+          <h3>MarketVerse &amp; Cosmic App</h3>
+          <p>AI chatbot platforms tested for prompt handling, response accuracy, data mapping, and conversational quality at scale.</p>
+          <div class="pc-tags"><span>AI Testing</span><span>Chatbot QA</span><span>Playwright</span><span>Exploratory</span></div>
+          <div class="pc-company">@ Datics AI</div>
+        </div>
+
+        <div class="project-card" data-aos data-aos-delay="300">
+          <div class="pc-top mobile"><i class="fas fa-mobile-alt pc-icon"></i><span class="pc-type">Mobile App</span></div>
+          <h3>Manzil Mobile App</h3>
+          <p>Property management iOS/Android app — end-to-end tested across property listings, rental workflows, and tenant management features.</p>
+          <div class="pc-tags"><span>iOS Testing</span><span>Android Testing</span><span>Usability</span><span>Cross-Platform</span></div>
+          <div class="pc-company">@ eString Technologies</div>
+        </div>
+
+        <div class="project-card" data-aos data-aos-delay="400">
+          <div class="pc-top service"><i class="fas fa-check-circle pc-icon"></i><span class="pc-type">Compliance</span></div>
+          <h3>OnComply</h3>
+          <p>Compliance management application validated for workflow accuracy, regulatory requirement handling, and data correctness.</p>
+          <div class="pc-tags"><span>Functional Testing</span><span>Regression</span><span>Cypress</span><span>Smoke</span></div>
+          <div class="pc-company">@ Zapta Technologies</div>
+        </div>
+
+        <div class="project-card" data-aos data-aos-delay="500">
+          <div class="pc-top rental"><i class="fas fa-home pc-icon"></i><span class="pc-type">Property Tech</span></div>
+          <h3>Rental Guru</h3>
+          <p>Property rental management web app tested for tenant interactions, payment workflows, and performance across devices.</p>
+          <div class="pc-tags"><span>UI Testing</span><span>Performance</span><span>Cross-Platform</span><span>Defect Mgmt</span></div>
+          <div class="pc-company">@ eString Technologies</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="certifications section" id="certifications">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Continuous learning</span>
+        <h2 class="section-title">Certifi<span class="highlight">cations</span></h2>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card" data-aos data-aos-delay="0">
+          <div class="cert-logo simplilearn"><i class="fas fa-graduation-cap"></i></div>
+          <div class="cert-info">
+            <h3>Introduction to JMeter</h3>
+            <span class="cert-issuer">Simplilearn</span>
+          </div>
+          <div class="cert-badge"><i class="fas fa-certificate"></i></div>
+        </div>
+        <div class="cert-card" data-aos data-aos-delay="100">
+          <div class="cert-logo simplilearn"><i class="fas fa-graduation-cap"></i></div>
+          <div class="cert-info">
+            <h3>Software Testing with Generative AI</h3>
+            <span class="cert-issuer">Simplilearn</span>
+          </div>
+          <div class="cert-badge"><i class="fas fa-certificate"></i></div>
+        </div>
+        <div class="cert-card" data-aos data-aos-delay="200">
+          <div class="cert-logo udemy"><i class="fas fa-play-circle"></i></div>
+          <div class="cert-info">
+            <h3>API Testing with Postman</h3>
+            <span class="cert-issuer">Udemy</span>
+          </div>
+          <div class="cert-badge"><i class="fas fa-certificate"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Let's connect</span>
+        <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos data-aos-delay="0">
+          <p class="contact-intro">
+            I'm always open to new opportunities, collaborations, or just a good chat about QA. Feel free to reach out!
+          </p>
+          <div class="contact-items">
+            <a href="mailto:muqadasjaved101@gmail.com" class="contact-item">
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <div><span>Email</span><strong>muqadasjaved101@gmail.com</strong></div>
+            </a>
+            <a href="tel:+923044192534" class="contact-item">
+              <div class="ci-icon"><i class="fas fa-phone"></i></div>
+              <div><span>Phone</span><strong>+92 304-419-2534</strong></div>
+            </a>
+            <a href="https://linkedin.com/in/muqadasjaved" target="_blank" class="contact-item">
+              <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
+              <div><span>LinkedIn</span><strong>linkedin.com/in/muqadasjaved</strong></div>
+            </a>
+            <a href="https://github.com/muqadasjavedcloud" target="_blank" class="contact-item">
+              <div class="ci-icon"><i class="fab fa-github"></i></div>
+              <div><span>GitHub</span><strong>github.com/muqadasjavedcloud</strong></div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" data-aos data-aos-delay="150" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="fname" placeholder=" " required />
+            <label for="fname">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="femail" placeholder=" " required />
+            <label for="femail">Your Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="fsubject" placeholder=" " required />
+            <label for="fsubject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="fmessage" rows="5" placeholder=" " required></textarea>
+            <label for="fmessage">Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"><span class="logo-bracket">&lt;</span>MJ<span class="logo-bracket">/&gt;</span></div>
+        <p>Designed &amp; built by <strong>Muqadas Javed</strong> &middot; QA Engineer</p>
+        <p class="footer-sub">"Quality is never an accident — it is always the result of intelligent effort."</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
