@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muqadas Javed – QA Engineer Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── PAGE SETUP ── */
+    :root {
+      --black:   #0f172a;
+      --dark:    #1e293b;
+      --mid:     #475569;
+      --light:   #64748b;
+      --border:  #cbd5e1;
+      --accent:  #1d4ed8;
+      --bg:      #ffffff;
+      --section-gap: 18px;
+    }
+
+    html { font-size: 10.5pt; }
+
+    body {
+      font-family: 'Inter', 'Calibri', 'Arial', sans-serif;
+      color: var(--black);
+      background: var(--bg);
+      line-height: 1.55;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── WRAPPER ── */
+    .page {
+      max-width: 794px;
+      margin: 0 auto;
+      padding: 36px 44px;
+      background: #fff;
+    }
+
+    /* ── HEADER ── */
+    .header { text-align: center; margin-bottom: 14px; }
+
+    .header h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .header .tagline {
+      font-size: 10pt;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.3px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px 16px;
+      font-size: 9pt;
+      color: var(--mid);
+    }
+
+    .contact-row a {
+      color: var(--mid);
+      text-decoration: none;
+    }
+
+    .contact-row span::before {
+      content: "•";
+      margin-right: 16px;
+    }
+    .contact-row span:first-child::before { content: ""; margin: 0; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1.5px solid var(--black);
+      margin: 10px 0 4px;
+    }
+
+    .divider-thin {
+      border: none;
+      border-top: 0.75px solid var(--border);
+      margin: 6px 0;
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: var(--section-gap); }
+
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    /* ── SUMMARY ── */
+    .summary p {
+      font-size: 9.5pt;
+      color: var(--dark);
+      line-height: 1.65;
+      text-align: justify;
+    }
+
+    /* ── EXPERIENCE ── */
+    .job { margin-bottom: 13px; }
+    .job:last-child { margin-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+
+    .job-left { flex: 1; }
+
+    .job-title {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .job-company {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .job-projects {
+      font-size: 8.5pt;
+      color: var(--mid);
+      margin-top: 1px;
+      font-style: italic;
+    }
+
+    .job-date {
+      font-size: 8.5pt;
+      color: var(--mid);
+      font-weight: 500;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .job ul {
+      margin-top: 5px;
+      padding-left: 14px;
+      list-style: disc;
+    }
+
+    .job ul li {
+      font-size: 9pt;
+      color: var(--dark);
+      margin-bottom: 3px;
+      line-height: 1.55;
+    }
+
+    .job ul li strong { color: var(--black); font-weight: 600; }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 5px 12px;
+      font-size: 9pt;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    .skill-value {
+      color: var(--dark);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .edu-left {}
+    .edu-degree { font-size: 9.5pt; font-weight: 700; color: var(--black); }
+    .edu-school { font-size: 9pt; color: var(--accent); font-weight: 600; }
+    .edu-detail { font-size: 8.5pt; color: var(--mid); margin-top: 1px; }
+
+    .edu-right {
+      font-size: 8.5pt;
+      color: var(--mid);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-bottom: 5px;
+      font-size: 9pt;
+    }
+
+    .cert-name { font-weight: 600; color: var(--black); }
+    .cert-issuer { color: var(--mid); font-size: 8.5pt; }
+
+    /* ── PRINT ── */
+    @media print {
+      html { font-size: 10pt; }
+      body { background: #fff; }
+      .page { padding: 24px 36px; max-width: 100%; }
+      .no-print { display: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+
+    /* ── SCREEN ONLY: Print Button ── */
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(29,78,216,0.35);
+      transition: background 0.2s;
+      z-index: 999;
+      font-family: 'Inter', sans-serif;
+    }
+    .print-btn:hover { background: #1e40af; }
+
+    @media print { .print-btn { display: none; } }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">⬇ Save as PDF</button>
+
+  <div class="page">
+
+    <!-- ══ HEADER ══ -->
+    <div class="header">
+      <h1>Muqadas Javed</h1>
+      <div class="tagline">QA Engineer &nbsp;|&nbsp; Manual &amp; Automation Testing &nbsp;|&nbsp; Web · Mobile · AI Chatbot</div>
+      <div class="contact-row">
+        <span>+92 304-419-2534</span>
+        <span><a href="mailto:muqadasjaved101@gmail.com">muqadasjaved101@gmail.com</a></span>
+        <span><a href="https://linkedin.com/in/muqadasjaved" target="_blank">linkedin.com/in/muqadasjaved</a></span>
+        <span><a href="https://github.com/muqadasjavedcloud" target="_blank">github.com/muqadasjavedcloud</a></span>
+        <span><a href="https://muqadasjavedcloud.github.io/portfolio" target="_blank">Portfolio</a></span>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ══ SUMMARY ══ -->
+    <div class="section summary">
+      <div class="section-title">Professional Summary</div>
+      <p>
+        Results-driven QA Engineer with 3+ years of experience in Manual and Automation Testing across web, mobile,
+        fintech, service-based, and AI-powered chatbot applications. Skilled in Playwright, Cypress, API Testing (Postman),
+        Regression Testing, Functional Testing, and Exploratory Testing. Experienced in designing and executing test cases,
+        defect management, and ensuring software quality throughout the SDLC in Agile environments. Proficient with
+        CI/CD workflows, Git, and cross-functional team collaboration to deliver high-quality products.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ══ EXPERIENCE ══ -->
+    <div class="section">
+      <div class="section-title">Professional Experience</div>
+
+      <!-- Job 1 -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-left">
+            <div class="job-title">QA Engineer</div>
+            <div class="job-company">Datics AI</div>
+            <div class="job-projects">Projects: ThreatMap (Security Platform) &nbsp;·&nbsp; FWP (Web Application) &nbsp;·&nbsp; MarketVerse &amp; Cosmic App (AI Chatbot Platforms)</div>
+          </div>
+          <div class="job-date">Aug 2025 – Present</div>
+        </div>
+        <ul>
+          <li>Led QA activities across web and AI-powered applications, including <strong>test planning</strong>, test case design, execution, and release validation.</li>
+          <li>Performed <strong>Functional, Regression, Exploratory, End-to-End, and Beta Testing</strong> to ensure product quality and stability.</li>
+          <li>Developed and maintained <strong>Playwright</strong> automation scripts for critical business workflows.</li>
+          <li>Validated security-related workflows, <strong>user roles, permissions, and data access controls</strong> for security-focused applications.</li>
+          <li>Tested AI chatbot platforms for <strong>response accuracy, data mapping, prompt handling</strong>, and conversational quality.</li>
+          <li>Collaborated with cross-functional teams to identify, track, and resolve defects throughout the <strong>SDLC</strong>.</li>
+        </ul>
+      </div>
+
+      <hr class="divider-thin" />
+
+      <!-- Job 2 -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-left">
+            <div class="job-title">Associate Software Quality Assurance Engineer</div>
+            <div class="job-company">Zapta Technologies</div>
+            <div class="job-projects">Projects: VolarTech (FinTech Platform) &nbsp;·&nbsp; OnComply &nbsp;·&nbsp; OpenTime &nbsp;·&nbsp; ThreatMap</div>
+          </div>
+          <div class="job-date">Jun 2024 – Aug 2025</div>
+        </div>
+        <ul>
+          <li>Executed <strong>Manual Testing</strong> including Functional, Regression, Smoke, Sanity, UI, and Exploratory Testing across fintech and service-based applications.</li>
+          <li>Designed and executed <strong>test cases</strong> to validate complex business workflows and system requirements.</li>
+          <li>Performed <strong>API Testing using Postman</strong> to verify data integrity, response validation, and system integrations.</li>
+          <li>Developed and maintained <strong>Cypress automation</strong> test suites to improve test coverage and efficiency.</li>
+          <li>Validated <strong>responsive behavior</strong> across multiple browsers, devices, and screen resolutions.</li>
+          <li>Participated in <strong>Agile ceremonies</strong>, defect management, requirement analysis, and release testing activities.</li>
+        </ul>
+      </div>
+
+      <hr class="divider-thin" />
+
+      <!-- Job 3 -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-left">
+            <div class="job-title">Associate QA Engineer</div>
+            <div class="job-company">eString Technologies (Pvt) Ltd</div>
+            <div class="job-projects">Projects: Manzil Mobile Application &nbsp;·&nbsp; Rental Guru (Property Management Applications)</div>
+          </div>
+          <div class="job-date">Apr 2023 – Apr 2024</div>
+        </div>
+        <ul>
+          <li>Performed <strong>end-to-end testing</strong> of Android and iOS property management applications, validating property listings, rental workflows, tenant interactions, and user account management.</li>
+          <li>Executed <strong>Functional, Regression, UI, Usability, and Cross-Platform Testing</strong> across multiple devices and operating systems.</li>
+          <li>Validated application performance, user experience, <strong>data accuracy</strong>, and compatibility to ensure seamless property search and management processes.</li>
+          <li>Reported, tracked, and verified defects using defect management tools, contributing to <strong>high-quality production releases</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ══ SKILLS ══ -->
+    <div class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <span class="skill-label">Automation Testing</span>
+        <span class="skill-value">Playwright, Cypress, JavaScript</span>
+
+        <span class="skill-label">Manual Testing</span>
+        <span class="skill-value">Functional, Regression, Smoke, Sanity, Exploratory, UI, Usability, End-to-End, Beta Testing</span>
+
+        <span class="skill-label">API Testing</span>
+        <span class="skill-value">Postman, REST API Validation, Response Validation, Data Integrity Testing</span>
+
+        <span class="skill-label">Mobile Testing</span>
+        <span class="skill-value">Android, iOS, Cross-Platform Testing, Usability Testing</span>
+
+        <span class="skill-label">AI &amp; Chatbot Testing</span>
+        <span class="skill-value">Prompt Testing, Response Accuracy, Data Mapping, Conversational Quality</span>
+
+        <span class="skill-label">DevOps &amp; Tools</span>
+        <span class="skill-value">Git, GitHub, CI/CD Workflows, Jira, Defect Management</span>
+
+        <span class="skill-label">Methodologies</span>
+        <span class="skill-value">Agile, Scrum, SDLC, Test Planning, Test Case Design, Release Validation</span>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ══ EDUCATION ══ -->
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-left">
+          <div class="edu-degree">Bachelor of Science in Software Engineering (BS SE)</div>
+          <div class="edu-school">Punjab University College of Information Technology (PUCIT)</div>
+          <div class="edu-detail">CGPA: 3.24 / 4.0</div>
+        </div>
+        <div class="edu-right">Aug 2020 – Jun 2024</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ══ CERTIFICATIONS ══ -->
+    <div class="section">
+      <div class="section-title">Certifications</div>
+
+      <div class="cert-item">
+        <div>
+          <span class="cert-name">Introduction to JMeter</span>
+          <span class="cert-issuer">&nbsp;–&nbsp; Simplilearn</span>
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div>
+          <span class="cert-name">Software Testing with Generative AI</span>
+          <span class="cert-issuer">&nbsp;–&nbsp; Simplilearn</span>
+        </div>
+      </div>
+
+      <div class="cert-item">
+        <div>
+          <span class="cert-name">API Testing with Postman</span>
+          <span class="cert-issuer">&nbsp;–&nbsp; Udemy</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /page -->
+
+</body>
+</html>
